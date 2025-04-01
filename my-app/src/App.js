@@ -1,11 +1,14 @@
 import React from "react";
-import TopNav from './componets/TopNav';
+import TopNav from './components/TopNav';
+import Footer from "./components/Footer/Footer"
+
 const App =()=>{
 
   return(
-
+<div>
 <TopNav/>
-
+<Footer/>
+</div>
   );
 }
 

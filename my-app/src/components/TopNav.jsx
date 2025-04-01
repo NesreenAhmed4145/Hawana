@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaUser } from "react-icons/fa"; // Imported FaUser
 
 const TopNav = () => {
   return (
@@ -8,8 +8,7 @@ const TopNav = () => {
       <div className="container">
         {/* Logo */}
         <a className="navbar-brand" href="#">
-        <img src="/assets/logo.png" alt="Hawana" style={{ height: "50px" }} />
-        {/* C:\Users\anesr\OneDrive\Desktop\hh\my-app\public\assets\logo.jpg */}
+          <img src="/assets/logo.png" alt="Hawana" style={{ height: "50px" }} />
         </a>
 
         {/* Navbar Toggle for Mobile */}
@@ -26,23 +25,27 @@ const TopNav = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "#ff69b4" ,fontSize: "22px"} }>Home</a>
+              <a className="nav-link" href="#" style={{ color: "#ff69b4", fontSize: "18px" }}>Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "#ff69b4" ,fontSize: "22px" }}>Shop</a>
+              <a className="nav-link" href="my-app\src\pages\Shop.jsx" style={{ color: "#ff69b4", fontSize: "18px" }}>Shop</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "#ff69b4" ,fontSize: "22px"}}>Login</a>
+              <a className="nav-link" href="#" style={{ color: "#ff69b4", fontSize: "18px" }}>Cart</a>
             </li>
+
+            {/* Person Icon for Login */}
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "#ff69b4" ,fontSize: "22px"}}>Cart</a>
+              <a className="nav-link" href="my-app\src\pages\Login.jsx" style={{ color: "#ff69b4" }}>
+                <FaUser size={22} />
+              </a>
             </li>
 
             {/* Shopping Cart Icon */}
             <li className="nav-item position-relative">
               <a className="nav-link" href="#" style={{ color: "#ff69b4" }}>
-                <FaShoppingCart size={30} />
-                <span className="badge bg-dark position-absolute top--10 start-100 translate-middle">
+                <FaShoppingCart size={25} />
+                <span className="badge bg-dark position-absolute top--10 start-100 translate-middle" style={{ color: "white" }}>
                   3
                 </span>
               </a>

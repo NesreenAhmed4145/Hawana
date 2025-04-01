@@ -1,0 +1,42 @@
+/* Footer background */
+footer {
+    background-color: #1a0b14; /* Dark purple background */
+    padding: 20px 0;
+  }
+  
+  /* Contact info text */
+  .contact-info {
+    color: #ff69b4;
+    font-size: 16px;
+  }
+  
+  /* Style for social media icons */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Circle around icons */
+  .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+  }
+  
+  /* Hover effect */
+  .circle:hover {
+    background-color: #ff69b4; /* Pink hover effect */
+    transform: scale(1.1);
+  }
+  
+  /* Icons inside circles */
+  .social-icon {
+    color: black;
+    font-size: 22px;
+  }
+  
