@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import $ from 'jquery';
 import 'jquery-mask-plugin';
 import './style.css'; 
+import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const RegistrationForm = () => {
@@ -39,16 +40,28 @@ const RegistrationForm = () => {
             Create Account
           </button>
         </div>
+         {/* Link to Login Form */}
+         <div className="form-group text-center" style={{ marginTop: '10px' }}>
+          <p>
+           have an account?{' '}
+            <Link to="/login" style={{ color: 'rgb(229, 38, 150)', fontWeight: 'bold' }}>
+            Login
+              </Link>
+          </p>
+        </div>
       </form>
 
-      <div className="social-media">
-        <h5>Sign up with social media</h5>
-        <div className="social-icons">
-          <a href="#"><i className="fab fa-facebook" title="Facebook"></i></a>
-          <a href="#"><i className="fab fa-google" title="Google"></i></a>
-          <a href="#"><i className="fab fa-twitter" title="Twitter"></i></a>
-        </div>
-      </div>
+      <div className="form">
+  <div className="social-media">
+    <h5>Sign up with social media</h5>
+    <div className="social-icons">
+      <a href="#" className="facebook"><i className="fab fa-facebook"></i></a>
+      <a href="#" className="google"><i className="fab fa-google"></i></a>
+      <a href="#" className="twitter"><i className="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };

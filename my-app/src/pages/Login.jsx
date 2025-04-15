@@ -59,14 +59,17 @@ const LoginForm = () => {
       </form>
 
       {/* Social Media Login */}
-      <div className="social-media">
-        <h5>Login with social media</h5>
-        <div className="social-icons">
-          <a href="#"><i className="fab fa-facebook" title="Facebook"></i></a>
-          <a href="#"><i className="fab fa-google" title="Google"></i></a>
-          <a href="#"><i className="fab fa-twitter" title="Twitter"></i></a>
-        </div>
-      </div>
+      <div className="form">
+  <div className="social-media">
+    <h5>Login with social media</h5>
+    <div className="social-icons">
+      <a href="#" className="facebook"><i className="fab fa-facebook"></i></a>
+      <a href="#" className="google"><i className="fab fa-google"></i></a>
+      <a href="#" className="twitter"><i className="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</div>
+
 
       {/* Render ForgotPassword Modal */}
       {isModalOpen && <ForgotPassword closeModal={closeModal} />}

@@ -1,12 +1,12 @@
 /* Footer background */
 footer {
-    background-color: #1a0b14; /* Dark purple background */
+    background-color: #e7aacbfa; 
     padding: 20px 0;
   }
   
   /* Contact info text */
   .contact-info {
-    color: #ff69b4;
+    color: rgb(229, 38, 150);
     font-size: 16px;
   }
   
@@ -30,7 +30,7 @@ footer {
   
   /* Hover effect */
   .circle:hover {
-    background-color: #ff69b4; /* Pink hover effect */
+    background-color: rgb(229, 38, 150); /* Pink hover effect */
     transform: scale(1.1);
   }
   

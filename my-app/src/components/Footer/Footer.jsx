@@ -41,7 +41,7 @@ const Footer = () => {
 
       {/* Copyright Notice */}
       <div className="text-center mt-3" style={{ color: "white" }}>
-        <p>&copy; {new Date().getFullYear()} Hawan. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Hawana. All rights reserved.</p>
       </div>
     </footer>
   );

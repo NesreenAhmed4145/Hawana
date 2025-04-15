@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Register from './pages/Register';
-import LoginForm from './pages/Login';
-import ForgotPassword from './pages/ForgotPassword';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopNav from "./components/TopNav";
 import Footer from "./components/Footer/Footer";
+
+// Pages
+import Register from './pages/Register';
+import Home from './pages/Home';
+import LoginForm from './pages/Login';
+import ForgotPassword from './pages/ForgotPassword';
 
 const TitleUpdater = () => {
   useEffect(() => {
@@ -18,9 +21,11 @@ const App = () => {
   return (
     <Router>
       <div className="app-container" style={{ backgroundColor: '#f2f1ea', minHeight: '100vh' }}>
-        <TitleUpdater /> {/* This will handle title changes */}
+        <TitleUpdater />
         <TopNav />
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
