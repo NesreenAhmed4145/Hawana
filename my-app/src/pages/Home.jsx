@@ -1,83 +1,321 @@
-import React, { useState } from 'react';
-import './Home.css';
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import {
+  Box,
+  Typography,
+  Button,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Grid,
+  Container
+} from '@mui/material';
 
-const images = [
-  '/assets/slide 1.jpg',  // Ensure the path is correct
-  'https://via.placeholder.com/800x400/33FF57/FFFFFF?text=Image+2',
-  'https://via.placeholder.com/800x400/5733FF/FFFFFF?text=Image+3',
+// Sample product data
+const products = [
+  {
+    id: 1,
+    name: 'Wireless Headphones',
+    price: '$99.99',
+    image: '/assets/slide 1.jpg',
+    isNew: true
+  },
+  {
+    id: 2,
+    name: 'Smart Watch',
+    price: '$199.99',
+    image: 'https://via.placeholder.com/300x300?text=Smart+Watch',
+    isNew: true
+  },
+  {
+    id: 3,
+    name: 'Bluetooth Speaker',
+    price: '$79.99',
+    image: 'https://via.placeholder.com/300x300?text=Bluetooth+Speaker',
+    isBestSeller: true
+  },
+  {
+    id: 4,
+    name: 'Laptop Backpack',
+    price: '$49.99',
+    image: 'https://via.placeholder.com/300x300?text=Laptop+Backpack',
+    isBestSeller: true
+  },
+  {
+    id: 5,
+    name: 'Wireless Earbuds',
+    price: '$129.99',
+    image: 'https://via.placeholder.com/300x300?text=Wireless+Earbuds',
+    isNew: true
+  },
+  {
+    id: 6,
+    name: 'Fitness Tracker',
+    price: '$89.99',
+    image: 'https://via.placeholder.com/300x300?text=Fitness+Tracker',
+    isBestSeller: true
+  }
 ];
 
-const bestSales = [
-  { title: 'Product 1', price: '$25.99', image: 'https://via.placeholder.com/200x200/FF5733/FFFFFF?text=Product+1' },
-  { title: 'Product 2', price: '$19.99', image: 'https://via.placeholder.com/200x200/33FF57/FFFFFF?text=Product+2' },
-  { title: 'Product 3', price: '$29.99', image: 'https://via.placeholder.com/200x200/5733FF/FFFFFF?text=Product+3' },
-];
-
-const newArrivals = [
-  { title: 'New Product 1', price: '$39.99', image: 'https://via.placeholder.com/200x200/FF33FF/FFFFFF?text=New+Product+1' },
-  { title: 'New Product 2', price: '$49.99', image: 'https://via.placeholder.com/200x200/33FFCC/FFFFFF?text=New+Product+2' },
-  { title: 'New Product 3', price: '$59.99', image: 'https://via.placeholder.com/200x200/FF9933/FFFFFF?text=New+Product+3' },
+// Sample category data
+const categories = [
+  {
+    name: 'Electronics',
+    image: 'https://via.placeholder.com/400x300?text=Electronics'
+  },
+  {
+    name: 'Clothing',
+    image: 'https://via.placeholder.com/400x300?text=Clothing'
+  },
+  {
+    name: 'Accessories',
+    image: 'https://via.placeholder.com/400x300?text=Accessories'
+  }
 ];
 
 const HomePage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
-
   return (
-    <div className="home-page">
-      {/* Image Carousel */}
-      <div className="slider">
-        <div
-          className="slide"
-          style={{ backgroundImage: `url(${images[currentIndex]})` }}
-        ></div>
-      </div>
-      <div className="slider-controls">
-        <button className="prev" onClick={prevSlide}>
-          &#8249;
-        </button>
-        <button className="next" onClick={nextSlide}>
-          &#8250;
-        </button>
-      </div>
+    <Box sx={{ minHeight: '100vh' }}>
+      {/* Hero Banner with background image and blur overlay */}
+      <Box
+    sx={{
+      position: 'relative',
+      height: { xs: 400, md: 550 },
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: 'white',
+      textAlign: 'center',
+      mb: 6,
+      overflow: 'hidden',
+    
+    }}
+  >
+   {/* Render the image directly */}
+   <Box
+  component="img"
+  src="/assets/slide1.jpg"
+  alt="Hero Banner"
+  sx={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '160%',
+    objectFit: 'cover', 
+    objectPosition: 'center', 
+    backgroundColor: '#111417', 
+    zIndex: 0,
+  }}
+/>
 
-      {/* Best Sales Section */}
-      <section className="section best-sales">
-        <h2>Best Sales</h2>
-        <div className="product-list">
-          {bestSales.map((product, index) => (
-            <div key={index} className="product-card">
-              <img src={product.image} alt={product.title} />
-              <h3>{product.title}</h3>
-              <p>{product.price}</p>
-              <button className="btn-buy">Buy Now</button>
-            </div>
-          ))}
-        </div>
-      </section>
 
-      {/* New Arrivals Section */}
-      <section className="section new-arrivals">
-        <h2>New Arrivals</h2>
-        <div className="product-list">
-          {newArrivals.map((product, index) => (
-            <div key={index} className="product-card">
-              <img src={product.image} alt={product.title} />
-              <h3>{product.title}</h3>
-              <p>{product.price}</p>
-              <button className="btn-buy">Buy Now</button>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
+
+    {/* Dark Overlay */}
+    <Box
+      sx={{
+        position: 'absolute',
+        inset: 0,
+        bgcolor: 'rgba(0, 0, 0, 0.4)',
+        backdropFilter: 'blur(2px)',
+        zIndex: 1,
+      }}
+    />
+        {/* Hero Content */}
+        <Container maxWidth="md" sx={{ zIndex: 2 }}>
+          <Typography variant="h3" component="h1" sx={{ fontWeight: 'bold', mb: 2 }}>
+            Welcome to Our Store
+          </Typography>
+          <Typography variant="h5" sx={{ mb: 4 }}>
+            Discover amazing products at unbeatable prices
+          </Typography>
+          <Button
+            variant="contained"
+            size="large"
+            sx={{ px: 4, py: 1.5, fontSize: '1.1rem' , backgroundColor:"rgb(229, 38, 150)",
+            '&:hover': {
+              backgroundColor: "#cc1c78",
+
+            }}}
+          >
+            Shop Now
+          </Button>
+        </Container>
+      </Box>
+
+      <Container maxWidth="lg">
+        {/* Categories Section */}
+        <Box sx={{ mb: 8 }}>
+          <Typography
+            variant="h4"
+            component="h2"
+            sx={{
+              mb: 6,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: 'text.primary'
+            }}
+          >
+            Shop by Category
+          </Typography>
+          <Grid container spacing={4}>
+            {categories.map((category, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card
+                  sx={{
+                    height: '100%',
+                    position: 'relative',
+                    borderRadius: 2,
+                    overflow: 'hidden',
+                    boxShadow: 3,
+                    '&:hover': {
+                      transform: 'scale(1.02)',
+                      transition: 'transform 0.3s ease'
+                    }
+                  }}
+                >
+                  <CardMedia
+                    component="img"
+                    image={category.image}
+                    alt={category.name}
+                    sx={{ height: 250, objectFit: 'cover' }}
+                  />
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      bgcolor: 'rgba(0,0,0,0.6)',
+                      color: 'white',
+                      p: 3,
+                      textAlign: 'center'
+                    }}
+                  >
+                    <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
+                      {category.name}
+                    </Typography>
+                    <Button
+                      variant="outlined"
+                      color="inherit"
+                      size="small"
+                      sx={{ mt: 2 }}
+                    >
+                      View Products
+                    </Button>
+                  </Box>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+        {/* Best Sellers Section */}
+        <Box sx={{ mb: 8 }}>
+          <Typography
+            variant="h4"
+            component="h2"
+            sx={{
+              mb: 4,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: 'text.primary',
+              justifyContent:'center'
+            }}
+          >
+            Best Sellers
+          </Typography>
+          <Grid container spacing={4}>
+            {products
+              .filter((product) => product.isBestSeller)
+              .map((product) => (
+                <Grid item xs={12} sm={6} md={4} key={product.id}>
+                  <ProductCard product={product} />
+                </Grid>
+              ))}
+          </Grid>
+        </Box>
+
+        {/* New Arrivals Section */}
+        <Box sx={{ mb: 8 }}>
+          <Typography
+            variant="h4"
+            component="h2"
+            sx={{
+              mb: 4,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: 'text.primary'
+            }}
+          >
+            New Arrivals
+          </Typography>
+          <Grid container spacing={4}>
+            {products
+              .filter((product) => product.isNew)
+              .map((product) => (
+                <Grid item xs={12} sm={6} md={4} key={product.id}>
+                  <ProductCard product={product} />
+                </Grid>
+              ))}
+          </Grid>
+        </Box>
+      </Container>
+    </Box>
+  );
+};
+
+// Product Card Component
+const ProductCard = ({ product }) => {
+  return (
+    <Card
+      sx={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        transition: 'transform 0.3s',
+        borderRadius: 2,
+        overflow: 'hidden',
+        boxShadow: 3,
+        '&:hover': {
+          transform: 'translateY(-5px)',
+          boxShadow: 6
+        }
+      }}
+    >
+      <CardMedia
+        component="img"
+        image={product.image}
+        alt={product.name}
+        sx={{
+          height: 0,
+          paddingTop: '100%',
+          objectFit: 'cover'
+        }}
+      />
+      <CardContent sx={{ flexGrow: 1 }}>
+        <Typography gutterBottom variant="h6" component="h3" sx={{ fontWeight: 'bold' }}>
+          {product.name}
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ fontWeight: 'medium' }}>
+          {product.price}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button
+          size="medium"
+          color="primary"
+          variant="contained"
+          fullWidth
+          sx={{ py: 1.5 }}
+        >
+          Add to Cart
+        </Button>
+      </CardActions>
+    </Card>
   );
 };
 
