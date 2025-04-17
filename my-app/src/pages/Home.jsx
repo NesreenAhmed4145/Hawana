@@ -1,7 +1,5 @@
 import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { Link } from 'react-router-dom';
 import {
   Box,
   Typography,
@@ -9,314 +7,289 @@ import {
   Card,
   CardMedia,
   CardContent,
-  CardActions,
   Grid,
   Container
 } from '@mui/material';
 
-// Sample product data
-const products = [
-  {
-    id: 1,
-    name: 'Wireless Headphones',
-    price: '$99.99',
-    image: '/assets/slide 1.jpg',
-    isNew: true
-  },
-  {
-    id: 2,
-    name: 'Smart Watch',
-    price: '$199.99',
-    image: 'https://via.placeholder.com/300x300?text=Smart+Watch',
-    isNew: true
-  },
-  {
-    id: 3,
-    name: 'Bluetooth Speaker',
-    price: '$79.99',
-    image: 'https://via.placeholder.com/300x300?text=Bluetooth+Speaker',
-    isBestSeller: true
-  },
-  {
-    id: 4,
-    name: 'Laptop Backpack',
-    price: '$49.99',
-    image: 'https://via.placeholder.com/300x300?text=Laptop+Backpack',
-    isBestSeller: true
-  },
-  {
-    id: 5,
-    name: 'Wireless Earbuds',
-    price: '$129.99',
-    image: 'https://via.placeholder.com/300x300?text=Wireless+Earbuds',
-    isNew: true
-  },
-  {
-    id: 6,
-    name: 'Fitness Tracker',
-    price: '$89.99',
-    image: 'https://via.placeholder.com/300x300?text=Fitness+Tracker',
-    isBestSeller: true
-  }
-];
-
-// Sample category data
-const categories = [
-  {
-    name: 'Electronics',
-    image: 'https://via.placeholder.com/400x300?text=Electronics'
-  },
-  {
-    name: 'Clothing',
-    image: 'https://via.placeholder.com/400x300?text=Clothing'
-  },
-  {
-    name: 'Accessories',
-    image: 'https://via.placeholder.com/400x300?text=Accessories'
-  }
-];
-
 const HomePage = () => {
+  // Categories data
+  const categories = [
+    {
+      name: 'All',
+      description: 'Explore our complete collection',
+      image: '/assets/slide2.jpg'
+    },
+    {
+      name: 'Olive',
+      description: 'Premium quality olives',
+      image: '/assets/olives.jpg'
+    },
+    {
+      name: 'Labneh',
+      description: 'Creamy traditional labneh',
+      image: '/assets/labneh.jpg'
+    },
+    {
+      name: 'Cheese',
+      description: 'World-class cheeses',
+      image: '/assets/cheese.jpeg'
+    },
+    
+    {
+      name: 'Our Passion',
+      description: 'Discover our story',
+      image: '/assets/passion.png'
+    }
+  ];
+
+  // Product data
+  const products = [
+    {
+      id: 1,
+      name: 'Extra Virgin Oil',
+      price: '$29.99',
+      image: '/assets/oil.jpg',
+      isNew: true
+    },
+    {
+      id: 2,
+      name: 'Herb Labneh',
+      price: '$8.99',
+      image: '/assets/green labneh.jpg',
+      isBestSeller: true
+    },
+    {
+      id: 3,
+      name: 'Gouda Cheese',
+      price: '$15.99',
+      image: '/assets/gouda.jpeg',
+      isBestSeller: true
+    },
+    {
+      id: 4,
+      name: 'Olive Mix',
+      price: '$14.99',
+      image: '/assets/cheese.jpeg',
+      isBestSeller: true
+    },
+    {
+      id: 5,
+      name: 'Spiced Labneh',
+      price: '$9.99',
+      image: '/assets/passion.png',
+      isNew: true
+    }
+    , {
+      id: 5,
+      name: 'Spiced Labneh',
+      price: '$9.99',
+      image: '/assets/passion.png',
+      isNew: true
+    }, {
+      id: 5,
+      name: 'Spiced Labneh',
+      price: '$9.99',
+      image: '/assets/passion.png',
+      isNew: true
+    }, {
+      id: 5,
+      name: 'Spiced Labneh',
+      price: '$9.99',
+      image: '/assets/passion.png',
+      isNew: true
+    }
+  ];
+
   return (
     <Box sx={{ minHeight: '100vh' }}>
-      {/* Hero Banner with background image and blur overlay */}
-      <Box
-    sx={{
-      position: 'relative',
-      height: { xs: 400, md: 550 },
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: 'white',
-      textAlign: 'center',
-      mb: 6,
-      overflow: 'hidden',
-    
-    }}
-  >
-   {/* Render the image directly */}
-   <Box
-  component="img"
-  src="/assets/slide1.jpg"
-  alt="Hero Banner"
+    {/* Hero Banner with background image and blur overlay */}
+    <Box
   sx={{
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '160%',
-    objectFit: 'cover', 
-    objectPosition: 'center', 
-    backgroundColor: '#111417', 
-    zIndex: 0,
+    position: 'relative',
+    height: { xs: 400, md: 550 },
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'white',
+    textAlign: 'center',
+    mb: 6,
+    overflow: 'hidden',
+  
   }}
+>
+ {/* Render the image directly */}
+ <Box
+component="img"
+src="/assets/slide1.jpg"
+alt="Hero Banner"
+sx={{
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '160%',
+  objectFit: 'cover', 
+  objectPosition: 'center', 
+  backgroundColor: '#111417', 
+  zIndex: 0,
+}}
 />
 
 
 
-    {/* Dark Overlay */}
-    <Box
-      sx={{
-        position: 'absolute',
-        inset: 0,
-        bgcolor: 'rgba(0, 0, 0, 0.4)',
-        backdropFilter: 'blur(2px)',
-        zIndex: 1,
-      }}
-    />
-        {/* Hero Content */}
-        <Container maxWidth="md" sx={{ zIndex: 2 }}>
-          <Typography variant="h3" component="h1" sx={{ fontWeight: 'bold', mb: 2 }}>
-            Welcome to Our Store
-          </Typography>
-          <Typography variant="h5" sx={{ mb: 4 }}>
-            Discover amazing products at unbeatable prices
-          </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            sx={{ px: 4, py: 1.5, fontSize: '1.1rem' , backgroundColor:"rgb(229, 38, 150)",
-            '&:hover': {
-              backgroundColor: "#cc1c78",
+  {/* Dark Overlay */}
+  <Box
+    sx={{
+      position: 'absolute',
+      inset: 0,
+      bgcolor: 'rgba(0, 0, 0, 0.4)',
+      backdropFilter: 'blur(2px)',
+      zIndex: 1,
+    }}
+  />
+      {/* Hero Content */}
+      <Container maxWidth="md" sx={{ zIndex: 2 }}>
+        <Typography variant="h3" component="h1" sx={{ fontWeight: 'bold', mb: 2 }}>
+          Welcome to Our Store
+        </Typography>
+        <Typography variant="h5" sx={{ mb: 4 }}>
+          Discover amazing products at unbeatable prices
+        </Typography>
+        <Link to="/shop">
+  <Button
+    variant="contained"
+    size="large"
+    sx={{
+      px: 4,
+      py: 1.5,
+      fontSize: '1.1rem',
+      backgroundColor: 'rgb(229, 38, 150)',
+      '&:hover': {
+        backgroundColor: '#cc1c78',
+      },
+    }}
+  >
+    Shop Now
+  </Button>
+</Link>
+      </Container>
+    </Box>
 
-            }}}
-          >
-            Shop Now
-          </Button>
-        </Container>
-      </Box>
 
-      <Container maxWidth="lg">
-        {/* Categories Section */}
-        <Box sx={{ mb: 8 }}>
-          <Typography
-            variant="h4"
-            component="h2"
-            sx={{
-              mb: 6,
-              fontWeight: 'bold',
-              textAlign: 'center',
-              color: 'text.primary'
-            }}
-          >
-            Shop by Category
-          </Typography>
-          <Grid container spacing={4}>
-            {categories.map((category, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card
-                  sx={{
-                    height: '100%',
-                    position: 'relative',
-                    borderRadius: 2,
-                    overflow: 'hidden',
-                    boxShadow: 3,
-                    '&:hover': {
-                      transform: 'scale(1.02)',
-                      transition: 'transform 0.3s ease'
-                    }
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    image={category.image}
-                    alt={category.name}
-                    sx={{ height: 250, objectFit: 'cover' }}
-                  />
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      bgcolor: 'rgba(0,0,0,0.6)',
-                      color: 'white',
-                      p: 3,
-                      textAlign: 'center'
-                    }}
-                  >
-                    <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
-                      {category.name}
-                    </Typography>
-                    <Button
-                      variant="outlined"
-                      color="inherit"
-                      size="small"
-                      sx={{ mt: 2 }}
-                    >
-                      View Products
-                    </Button>
-                  </Box>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+      {/* Categories Section */}
+      <Container maxWidth="xl" sx={{ py: 8 }}>
+        <SectionTitle>Shop Categories</SectionTitle>
+        <Grid container spacing={5} sx={{ mb: 10 }}>
+          {categories.map((item) => (
+            <Grid item xs={6} md={2.4} key={item.name}>
+              <UniformCard item={item} />
+            </Grid>
+          ))}
+        </Grid>
 
         {/* Best Sellers Section */}
-        <Box sx={{ mb: 8 }}>
-          <Typography
-            variant="h4"
-            component="h2"
-            sx={{
-              mb: 4,
-              fontWeight: 'bold',
-              textAlign: 'center',
-              color: 'text.primary',
-              justifyContent:'center'
-            }}
-          >
-            Best Sellers
-          </Typography>
-          <Grid container spacing={4}>
-            {products
-              .filter((product) => product.isBestSeller)
-              .map((product) => (
-                <Grid item xs={12} sm={6} md={4} key={product.id}>
-                  <ProductCard product={product} />
-                </Grid>
-              ))}
-          </Grid>
-        </Box>
+        <SectionTitle>Best Sellers</SectionTitle>
+        <Grid container spacing={3} sx={{ mb: 10 ,justifyContent:"center" }}>
+          {products.filter(p => p.isBestSeller).map((product) => (
+            <Grid item xs={6} md={2.4} key={product.id}>
+              <UniformCard item={product} showPrice />
+            </Grid>
+          ))}
+        </Grid>
 
         {/* New Arrivals Section */}
-        <Box sx={{ mb: 8 }}>
-          <Typography
-            variant="h4"
-            component="h2"
-            sx={{
-              mb: 4,
-              fontWeight: 'bold',
-              textAlign: 'center',
-              color: 'text.primary'
-            }}
-          >
-            New Arrivals
-          </Typography>
-          <Grid container spacing={4}>
-            {products
-              .filter((product) => product.isNew)
-              .map((product) => (
-                <Grid item xs={12} sm={6} md={4} key={product.id}>
-                  <ProductCard product={product} />
-                </Grid>
-              ))}
-          </Grid>
-        </Box>
+        <SectionTitle>New Arrivals</SectionTitle>
+        <Grid container spacing={3}sx={{justifyContent:"center" }}>
+          {products.filter(p => p.isNew).map((product) => (
+            <Grid item xs={6} md={2.4} key={product.id}>
+              <UniformCard item={product} showPrice />
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </Box>
   );
 };
 
-// Product Card Component
-const ProductCard = ({ product }) => {
-  return (
-    <Card
-      sx={{
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        transition: 'transform 0.3s',
-        borderRadius: 2,
-        overflow: 'hidden',
-        boxShadow: 3,
-        '&:hover': {
-          transform: 'translateY(-5px)',
-          boxShadow: 6
-        }
-      }}
-    >
+// Reusable Components
+const SectionTitle = ({ children }) => (
+  <Typography variant="h3" sx={{
+    mb: 6,
+    fontWeight: 800,
+    textAlign: 'center',
+    position: 'relative',
+    fontSize: { xs: '2rem', md: '2.25rem' },
+    '&:after': {
+      content: '""',
+      position: 'absolute',
+      width: '80px',
+      height: '4px',
+      bottom: '-20px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      backgroundColor: 'primary.main',
+      borderRadius: '2px'
+    }
+  }}>
+    {children}
+  </Typography>
+);
+
+const UniformCard = ({ item, showPrice }) => (
+  <Card sx={{
+    height: '100%',
+    borderRadius: '12px',
+    textAlign:'center',
+    overflow: 'hidden',
+    boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
+    transition: 'transform 0.3s ease',
+    '&:hover': {
+      transform: 'translateY(-5px)'
+    }
+  }}>
+    <Box sx={{
+      position: 'relative',
+      paddingTop: '100%',
+      overflow: 'hidden'
+    }}>
       <CardMedia
-        component="img"
-        image={product.image}
-        alt={product.name}
+        image={item.image}
+        alt={item.name}
         sx={{
-          height: 0,
-          paddingTop: '100%',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
           objectFit: 'cover'
         }}
       />
-      <CardContent sx={{ flexGrow: 1 }}>
-        <Typography gutterBottom variant="h6" component="h3" sx={{ fontWeight: 'bold' }}>
-          {product.name}
+    </Box>
+    <CardContent sx={{
+      px: 2,
+      py: 3,
+      textAlign: 'center',
+      height: 120,
+      width:250,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center'
+    }}>
+      <div>
+        <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+          {item.name}
         </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ fontWeight: 'medium' }}>
-          {product.price}
+        <Typography variant="body2" sx={{ color: 'text.secondary', minHeight: 40 }}>
+          {item.description}
         </Typography>
-      </CardContent>
-      <CardActions>
-        <Button
-          size="medium"
-          color="primary"
-          variant="contained"
-          fullWidth
-          sx={{ py: 1.5 }}
-        >
-          Add to Cart
-        </Button>
-      </CardActions>
-    </Card>
-  );
-};
+      </div>
+      {showPrice && (
+        <Typography variant="subtitle1" sx={{ fontWeight: 700, color: 'primary.main' }}>
+          {item.price}
+        </Typography>
+      )}
+    </CardContent>
+  </Card>
+);
 
 export default HomePage;
