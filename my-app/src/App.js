@@ -8,6 +8,9 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import LoginForm from './pages/Login';
 import ForgotPassword from './pages/ForgotPassword';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+
 
 const TitleUpdater = () => {
   useEffect(() => {
@@ -28,6 +31,8 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/Checkout" element={<Checkout />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
         <Footer />
