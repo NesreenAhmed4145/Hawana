@@ -1,0 +1,258 @@
+html, body {
+    height: 100%; 
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    flex: 1; 
+  }
+  
+  .form {
+    padding: 20px 0;
+  }
+  
+  .form form {
+    background-color: #ffffffb0;
+    max-width: 450px;
+    margin: auto;
+    padding: 30px 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  .form .form-icon {
+    text-align: center;
+    background-color: ffffffb0;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #0a0606bd;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    margin-bottom: 20px;
+    line-height: 60px;
+  }
+  
+  .form .item {
+    border-radius: 20px;
+    margin-bottom: 15px;
+    padding: 8px 20px;
+  }
+  
+  .form .form-group .button {
+    border-radius: 30px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(229, 38, 150);
+    border: none;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .form .button:hover {
+    background-color: rgb(204, 28, 120);
+    transform: translateY(-1px);
+    cursor: pointer;
+  }
+  
+  .form .social-media {
+    max-width: 450px;
+    background-color: #ffffffb0;
+    margin: auto;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top: 1px solid #dee9ff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  .form  .social-icons a.facebook i {
+    color: #3b5998; 
+  }
+  
+  .form  .social-icons a.google i {
+    color: #DB4437; 
+  }
+  
+  .form  .social-icons .twitter i {
+    color: #1DA1F2; 
+  }
+  
+  
+  .form .social-icons {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form .social-icons a {
+    font-size: 18px;
+    margin: 0 8px;
+    border: 1px solid rgba(10, 3, 3, 0.556);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: #ffffffb0;
+    line-height: 40px;
+    transition: all 0.3s ease;
+  }
+  
+  .form .social-icons a:hover {
+    transform: translateY(-1px);
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  
+  @media (max-width: 576px) {
+    .form form {
+      padding: 30px 15px;
+    }
+  
+    .form .form-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      line-height: 50px;
+    }
+  
+    .form .form-group .button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  
+  small {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+ 
+
+  
+/* Modal overlay (backdrop) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears on top of other content */
+    transition: opacity 0.3s ease; /* Smooth transition effect */
+  }
+  
+  /* Modal container (the actual window) */
+  .modal-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px; /* Adjusted size for a less square look */
+    text-align: center;
+    animation: fadeIn 0.3s ease-out; /* Fade-in animation */
+  }
+  
+  /* Animation for modal */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .form-icon {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .button {
+    background-color: rgb(229, 38, 150);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #ff4c8b;
+  }
+  
+  .message {
+    margin-top: 15px;
+    color: green;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  a {
+    color: rgb(229, 38, 150);
+    font-weight: bold;
+  }
+  
+  /* Close button for modal */
+  .close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .close-modal-button:hover {
+    color: rgb(229, 38, 150);
+  }
+  
+  .close-modal-button:focus {
+    outline: none;
+  }
+  
+  .modal-container {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  

@@ -1,0 +1,46 @@
+.hero-section {
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+  background-color: #e52696;
+}
+
+.filter-dropdown {
+  max-width: 200px;
+  margin-left: 1rem;
+}
+
+.btn-pink {
+  background-color: rgb(229, 38, 150);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+}
+
+.btn-pink:hover {
+  background-color: rgb(200, 30, 130);
+  color: white;
+}
+
+.card-footer-custom {
+  background-color: rgb(229, 38, 150);
+  border: none;
+  text-align: center;
+}
+
+.add-to-cart-btn {
+  background-color: #e52696;
+  color: black;
+  border: 2px solid rgb(229, 38, 150);
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+.add-to-cart-btn:hover {
+  background-color: rgb(229, 38, 150);
+  color: white;
+}
